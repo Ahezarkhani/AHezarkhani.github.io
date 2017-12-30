@@ -21,3 +21,16 @@ body {
 .active {
     border-bottom: 2px solid white;
 }
+
+.round-blue-rect {
+    padding:0px;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .round-blue-rect {
+        padding:7px;
+        border-radius:5px;
+        background-color: blue;
+    }
+}
