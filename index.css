@@ -1,0 +1,23 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo-112 {
+    position:fixed;
+    left:200px;
+    top:3px;
+
+    font-style: italic;
+    font-weight:800;
+    font-size: 34px;
+}
+
+.navbar-align-right {
+    position:fixed;
+    right:200px;
+    top:15px;
+}
+
+.active {
+    border-bottom: 2px solid white;
+}
