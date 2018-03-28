@@ -1,0 +1,40 @@
+.header {
+    width:100%;
+    text-align:center;
+    margin-top:20vh;
+}
+
+h1 {
+    font-size: 7vh;
+    color: #2176AE;
+    font-weight:800;
+}
+
+input {
+    width: 100%;
+    height: 6vh;
+    font-size: 3vh;
+}
+
+body{
+    background-color: #F6F7EB;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#add-new-row {
+    width:6vw;
+    margin: 2vw;
+    height:2vw;
+    background-color: #585123;
+    border-radius:1vw;
+}
+
+#check-scheme {
+    width:10vw;
+    margin: 2vw;
+    height:4vw;
+    font-size: 1vw;
+    background-color: #57B8FF;
+    border-radius:1vw;
+    float:right;
+}
