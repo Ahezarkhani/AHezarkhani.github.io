@@ -59,7 +59,9 @@ function checkScheme() {
     } else {
         $("#status").html("Try Again!")
         if(problemNumber != '3'){
-            $("#compressed-text").html("Compressed Text: " + curr_phrase)
+            var result = "Original Text: " + phrase + "<br><br>"
+            result += "Compressed Text: " + curr_phrase
+            $("#compressed-text").html(result)
         } else {
             $("#compressed-text").html("")
         }
