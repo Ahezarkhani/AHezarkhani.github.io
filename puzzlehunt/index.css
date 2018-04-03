@@ -4,6 +4,11 @@
     margin-top:20vh;
 }
 
+.results {
+    width:100%;
+    text-align:center;
+}
+
 h1 {
     font-size: 7vh;
     color: #2176AE;

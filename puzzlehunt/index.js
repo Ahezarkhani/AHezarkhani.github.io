@@ -48,9 +48,9 @@ function checkScheme() {
         curr_phrase = curr_phrase.replace(new RegExp(turnThisInputs[i].value, 'g'), intoThisInputs[i].value);
     }
 
-    var decompressed;
+    var decompressed = curr_phrase;
     for(var i = 0; i < intoThisInputs.length; i++){
-        decompressed = curr_phrase.replace(new RegExp(intoThisInputs[i].value, 'g'), turnThisInputs[i].value);
+        decompressed = decompressed.replace(new RegExp(intoThisInputs[i].value, 'g'), turnThisInputs[i].value);
     }
 
     if ((curr_phrase.length <= phrase.length - 5) && (decompressed === phrase)) {
@@ -59,7 +59,8 @@ function checkScheme() {
     } else {
         $("#status").html("Try Again!")
         if(problemNumber != '3'){
-            var result = "Compressed Text: " + curr_phrase + "<br><br>"
+            var result = "Original Text:" + phrase + "<br><br>"
+            result += "Compressed Text: " + curr_phrase + "<br><br>"
             result += "Decompressed Text: " + decompressed
             $("#compressed-text").html(result)
         } else {
