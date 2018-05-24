@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/roi-calculator.css">
 </head>
 
 <body>
@@ -19,14 +20,16 @@
         <!-- header -->
         <a href="index.html"><img class="logo" src="images/logo.png" alt="logo"></a>
         <div class="nav">
-            <div class="icon" id="hamburger">
+            <div class="icon" id="hamburger" onclick="toggleNavHard()">
                 <img src="images/hamburger_menu.png" alt="bars">
             </div>
-            <div class="icon" id="contact" onclick="showModal()">
-                <img src="images/contact-us.svg" alt="contact">
-            </div>
-            <div class="icon" id="blog">
-                <img src="images/blog-icon.svg" alt="blog">
+            <div class="nav-icons-list">
+                <div class="icon" id="contact" onclick="showModal()">
+                    <img src="images/contact-us.svg" alt="contact">
+                </div>
+                <div class="icon" id="blog">
+                    <img src="images/blog-icon.svg" alt="blog">
+                </div>
             </div>
         </div>
         <img class="charger-image" src="images/charger-2.png" alt="charger">
@@ -231,9 +234,93 @@
     </div>
 
     <div class="roi-calc-button-wrapper">
-        <button id="roi-calc-button">
+        <div id="roi-calc-button" onclick="toggleROICalc()">
             ROI CALCULATOR
-        </button>
+            <img id="up-arrow" src="images/up-arrow.svg" alt="">
+        </div>
+        <div class="roi-calc">
+            <div class="row">
+                <div id="roi-calc-info">
+                    <div id="roi-calc-title">
+                        ROI CALCULATOR
+                    </div>
+                    <div id="roi-calc-description">
+                        This calculator simulates the economic impact of 
+                        injuries on your organization.
+                    </div>
+                </div>
+                <div id="roi-calc-exec-button">
+                    <button onclick="calculateROI()">CALCULATE</button>
+                </div>
+            </div>
+            <div class="row">
+                <div id="injuries-per-year">
+                    # of Strains and Sprains/year
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="15" value="0" class="slider" id="injuries-per-year-range">
+                    </div>
+                    <div id="injuries-per-year-val">
+                        0 Strains and Sprains / year
+                    </div>
+                </div>
+                <div id="business-profit-margin">
+                    Business Profit Margin (%)
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" value="0" class="slider" id="business-profit-margin-range">
+                    </div>
+                    <div id="business-profit-margin-val">
+                        0% Profit Margin
+                    </div>
+                </div>
+            </div>
+
+            <div class="roi-results">
+                <div class="row">
+                    <div id="directCostSection">
+                        <div class="cost-title">
+                            Estimated Total Direct Cost
+                        </div>
+                        <div class="cost" id="directCost">
+                            $###,###
+                        </div>
+                    </div>
+                    <div id="indirectCostSection">
+                        <div class="cost-title">
+                            Estimated Total Indirect Cost
+                        </div>
+                        <div class="cost" id="indirectCost">
+                            $###,###
+                        </div>
+                    </div>
+                    <div id="combinedCostSection">
+                        <div class="cost-title">
+                            Estimated Total Combined Cost
+                        </div>
+                        <div class="cost" id="combinedCost">
+                            $###,###
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="salesDirectCostSection">
+                        <div class="cost-title">
+                            Sales to Cover Direct Cost
+                        </div>
+                        <div class="cost" id="salesDirectCost">
+                            $###,###
+                        </div>
+                    </div>
+                    <div id="salesIndirectCostSection">
+                        <div class="cost-title">
+                            Sales to Cover Indirect Cost
+                        </div>
+                        <div class="cost" id="salesIndirectCost">
+                            $###,###
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -261,7 +348,9 @@
             <div class="footer-action">
                 <a href="team.html">OUR TEAM</a>
             </div>
-            <div class="footer-action">PRESS</div>
+            <div class="footer-action">
+                <a href="press.html">PRESS</a>
+            </div>
             <div class="footer-action">BLOG</div>
             <div class="footer-action">LOGIN</div>
         </div>

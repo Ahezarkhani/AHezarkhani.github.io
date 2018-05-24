@@ -254,31 +254,9 @@
 
 
 
-.roi-calc-button-wrapper{
-    text-align: center;
-}
-
-.roi-calc-button-wrapper button {
-    margin-top:20px;
-    margin-bottom: 150px;
-
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    height:80px;
-    width: 400px;
-    background-color: #f1f6f0;
-    border: none;
-
-    font-size: 30px;
-}
-
-.roi-calc-button-wrapper button:hover {
-    cursor: pointer;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-
 
 .ergo-partners-block{
+    margin-top: 150px;
     text-align: center;
     background-color:#5AB9EA;
     position: relative;

@@ -18,14 +18,16 @@
     <!-- header -->
     <a href="index.html"><img class="logo" src="images/logo.png" alt="logo"></a>
     <div class="nav">
-            <div class="icon" id="hamburger">
+            <div class="icon" id="hamburger" onclick="toggleNavHard()">
                 <img src="images/hamburger_menu.png" alt="bars">
             </div>
-            <div class="icon" id="contact">
-                <img src="images/contact-us.svg" alt="contact">
-            </div>
-            <div class="icon" id="blog">
-                <img src="images/blog-icon.svg" alt="blog">
+            <div class="nav-icons-list">
+                <div class="icon" id="contact" onclick="showModal()">
+                    <img src="images/contact-us.svg" alt="contact">
+                </div>
+                <div class="icon" id="blog">
+                    <img src="images/blog-icon.svg" alt="blog">
+                </div>
             </div>
         </div>
 
@@ -156,7 +158,9 @@
             <div class="footer-action">
                 <a href="team.html">OUR TEAM</a>
             </div>
-            <div class="footer-action">PRESS</div>
+            <div class="footer-action">
+                <a href="press.html">PRESS</a>
+            </div>
             <div class="footer-action">BLOG</div>
             <div class="footer-action">LOGIN</div>
         </div>
