@@ -1,0 +1,343 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>VIT</title>
+    <meta name="description" content="VIT Initiative">
+    <meta name="author" content="AHEZ INC">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <div class="homepage">
+        <!-- header -->
+        <a href="index.html"><img class="logo" src="images/logo.png" alt="logo"></a>
+        <div class="nav">
+            <div class="icon" id="hamburger">
+                <img src="images/hamburger_menu.png" alt="bars">
+            </div>
+            <div class="icon" id="contact" onclick="showModal()">
+                <img src="images/contact-us.svg" alt="contact">
+            </div>
+            <div class="icon" id="blog">
+                <img src="images/blog-icon.svg" alt="blog">
+            </div>
+        </div>
+        <img class="charger-image" src="images/charger-2.png" alt="charger">
+        <!-- <img class="charger-image" src="images/vit-final-charger-trans.png" alt="charger"> -->
+
+        <!-- Content -->
+        <div class="content">
+            <div class="content-title">VIT INITIATIVE</div>
+            <div class="content-description">Create a safer work environment, optimize <br>
+            workflow, and increase your bottom line.</div>
+            <button onclick="learnMoreScroll()">
+                LEARN MORE
+            </button>
+        </div>
+    </div>
+
+    <div class="reasons">
+        <div class="reason-info-card">
+            <img src="images/time-icon.png" alt="bars">
+            <div class="reason-info-title">
+                INCREASE EFFICIENCY
+            </div>
+            <div class="reason-info-description">
+                Eliminate wasted movements to  <br>
+                decrease cycle times to move product <br>
+                returning $3-5 for every $1 <br>
+                <br>
+            </div>
+        </div>
+        <div class="reason-info-card">
+            <img src="images/money-icon.png" alt="bars">
+            <div class="reason-info-title">
+                SAVE MONEY
+            </div>
+            <div class="reason-info-description">
+                Save on direct and indirect costs with  <br>
+                an average of $30K direct costs and <br>
+                $30K indirect costs for a strain / sprain<br>
+                injury, Arc pays itself back in 1 month
+            </div>
+        </div>
+        <div class="reason-info-card">
+            <img src="images/safety-icon.png" alt="bars">
+            <div class="reason-info-title">
+                IMPROVE SAFETY
+            </div>
+            <div class="reason-info-description">
+                Give transparency to your supervisors  <br>
+                and team members on their progress <br>
+                and report corrective actions to<br>
+                decrease 50% of injury costs
+            </div>
+        </div>
+    </div>
+
+    <div class="info-block" id="info-block-grey">
+        #1 REASON FOR WORKPLACE INJURIES ARE OVEREXERTION
+        AND LIFTING-RELATED ISSUES COSTING $70 BILLION USD.
+    </div>
+
+
+    <div class="stats">
+        <div class="stats-card">
+            <div class="stats-title">
+                77K+
+            </div>
+            <div class="stats-description">
+                movements
+            </div>
+        </div>
+        <div class="vl"></div>
+        <div class="stats-card">
+            <div class="stats-title">
+                44K+
+            </div>
+            <div class="stats-description">
+                work hours
+            </div>
+        </div>
+        <div class="vl"></div>
+        <div class="stats-card">
+            <div class="stats-title">
+                400+
+            </div>
+            <div class="stats-description">
+                shifts
+            </div>
+        </div>
+    </div>
+
+    <div class="case-study-slider">
+        
+        <div class="img-overlay"></div>
+        <div class="img-wrapper">
+            <div class="img-overlay"></div>
+            <img src="images/worker-in-warehouse.png" alt="worker-image">
+        </div>
+    </div>
+
+    <div class="info-block"  id="info-block-blue">
+        OFTEN TIMES, NEW HIRES ACCOUNT FOR THE MAJORITY OF RISKS AT A COMPANY SITE. 
+        <br>
+        <br>
+        VIT HELPS ADHERANCE TO SAFETY TRAINING TO REDUCE COSTS OF INJURY.
+    </div>
+
+
+
+
+    <div class="how-it-works">
+        <div class="hiw-title">
+            HOW IT WORKS
+        </div>
+
+        <div class="hiw-content">
+            <div class="hiw-item-list">
+                <div class="hiw-item" id="hiw-active" onclick="hiwSelect(this)">
+                    TRACKING FORM
+                </div>
+                <div class="hiw-item" onclick="hiwSelect(this)">
+                    ACTIONABLE DATA
+                </div>
+                <div class="hiw-item" onclick="hiwSelect(this)">
+                    PROMOTE CORRECT HABITS
+                </div>
+                <div class="hiw-item" onclick="hiwSelect(this)">
+                    INCREASE PRODUCTIVITY
+                </div>
+            </div>
+            <div class="hiw-image-block">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-info">
+        <img src="images/dashboard-screenshot.png" alt="dashboard">
+        <div class="dash-text">
+            <div class="dash-title">
+                TRACK SAFETY &amp; RECEIVE ALERTS
+            </div>
+            <div class="dash-description">
+                The intuitive user interface allows busy supervisors to track 
+                activity and receive safety alerts at a glance.
+            </div>
+        </div>
+    </div>
+
+    <div class="arc-info">
+        <div class="arc-text">
+            <div class="arc-title">
+                EASY TO WEAR
+            </div>
+            <div class="arc-description">
+                Arc can be worn on shirts, hoodies, sweaters, etc. The feather 
+                lightness of the device makes you forget its even on.
+            </div>
+        </div>
+        <img src="images/vit-on-back.png" alt="dashboard">
+    </div>
+
+
+    <div class="reasons">
+        <div class="reason-info-card">
+            <img src="images/real-time-icon.png" alt="bars">
+            <div class="reason-info-title">
+                PROVIDE REAL-TIME COACHING
+            </div>
+            <div class="reason-info-description">
+                When associates are exhibiting high-  <br>
+                risk postures or movements they will <br>
+                receive a simple vibration reminding <br>
+                them to maintain proper ergonomic form<br>
+            </div>
+        </div>
+        <div class="reason-info-card">
+            <img src="images/reporting-icon.png" alt="bars">
+            <div class="reason-info-title">
+                LEADING INDICATOR REPORTING
+            </div>
+            <div class="reason-info-description">
+                Automatically capture leading  <br>
+                indicators around safe lifting and <br>
+                generate reports all within our <br>
+                supervisor app.<br>
+                <br>
+            </div>
+        </div>
+        <div class="reason-info-card">
+            <img src="images/ergonomics-icon.png" alt="bars">
+            <div class="reason-info-title">
+                INCREASE ADHERENCE TO ERGONOMICS
+            </div>
+            <div class="reason-info-description">
+                Increase awareness to proper  <br>
+                ergonomic techniques to correct years <br>
+                of poor lifting habits<br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <div class="roi-calc-button-wrapper">
+        <button id="roi-calc-button">
+            ROI CALCULATOR
+        </button>
+    </div>
+
+
+    <div class="ergo-partners-block">
+        <div class="ergo-partners-title">
+            Ergo Partner Program
+        </div>
+        <div class="ergo-partners-logo-scroll">
+            <img src="images/partner-hold.png" alt="bars">
+            <img src="images/partner-hold.png" alt="bars">
+            <img src="images/partner-hold.png" alt="bars">
+            <img src="images/partner-hold.png" alt="bars">
+            <img src="images/partner-hold.png" alt="bars">
+        </div>
+        <div class="ergo-partners-action">
+            JOIN PARTNER PROGRAM
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-actions-list">
+            <div class="footer-action" onclick="showModal()">
+                CONTACT US
+            </div>
+            <div class="footer-action">
+                <a href="team.html">OUR TEAM</a>
+            </div>
+            <div class="footer-action">PRESS</div>
+            <div class="footer-action">BLOG</div>
+            <div class="footer-action">LOGIN</div>
+        </div>
+        <div class="footer-text">
+            VIT INITIATIVE<br>
+            <br>
+            VIT is a health, safety and human capital performance company which
+            designs and deploys employee self-monitoring, feedback and training
+            technologies to rapidly prevent and reduce highly prevalent
+            musculoskeletal injuries.
+        </div>
+    </div>
+
+
+    <div class="modal-container" onclick="closeModal()"></div>
+    <div class="modal">
+        <div class="close-modal" onclick="closeModal()">&times;</div>
+        <div class="modal-text">
+            <div class="modal-title">
+                CONTACT US!
+            </div>
+            <div class="modal-description">
+                We are working hard to make our products the best in the 
+                industry. Please contact us with any feedback you have. We 
+                would love to hear from you.
+            </div>
+            <div class="modal-contact-info">
+                Andy Chan <br>
+                Connor Young <br>
+                <br>
+                +1 (281) 841 - 7378
+                info@vitinitiative.com
+            </div>
+        </div>
+        <div class="modal-form">
+            <form>
+                <div class="input-wrap half-width">
+                    <label for="firstname">First Name *</label>
+                    <input type="text" name="firstname" id="firstname">
+                </div>
+                <div class="input-wrap half-width">
+                    <label for="lastname">Last Name *</label>
+                    <input type="text" name="lastname" id="lastname">
+                </div>
+                <div class="input-wrap full-width">
+                    <label for="businessname">Business Name</label>
+                    <input type="text" name="businessname" id="businessname">
+                </div>
+                <div class="input-wrap full-width">
+                    <label for="emailaddress">Email Address</label>
+                    <input type="text" name="emailaddress" id="emailaddress">
+                </div>
+                <div class="input-wrap full-width">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message"></textarea>
+                </div>
+                <button type="submit">SEND</button>
+            </form> 
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/base.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
