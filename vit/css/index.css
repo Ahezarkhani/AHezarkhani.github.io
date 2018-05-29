@@ -90,6 +90,14 @@
     margin-top: 100px;
 }
 
+.stats .stats-intro {
+    font-size: 4vw;
+    /*margin-left: 10vw;*/
+    text-align: center;
+    margin-bottom: 2vw;
+    font-weight: 800;
+}
+
 .stats .stats-card {
     width: 29vw;
     margin: 1vw;
@@ -133,6 +141,36 @@
     background-color: rgba(128,128,128,0.6);
 }
 
+.case-study-slider .case-study-info {
+    position: absolute;
+    left: 60vw;
+    top: 7.5vw;
+}
+
+.case-study-slider .case-study-info .case-study-category{
+    font-size: 2vw;
+    font-weight: 100;
+    color: white;
+
+
+    text-shadow: 2px 2px #666666;
+}
+
+.case-study-slider .case-study-info .case-study-title{
+    font-size: 3vw;
+    color: white;
+    margin-top: .5vw;
+
+    text-shadow: 2px 2px #666666;
+}
+
+.case-study-slider .case-study-info .case-study-button{
+    font-size: 1.5vw;
+    margin-top: 1vw;
+    height: 4vw;
+    width: 20vw;
+    background-color: white;
+}
 
 .how-it-works {
     padding-top:6vmax;
@@ -148,11 +186,14 @@
 }
 
 .how-it-works .hiw-content {
+    position: relative;
 }
 
 .how-it-works .hiw-content .hiw-item-list {
     width: 35vw;
-    display: inline-block;
+    position: absolute;
+    top:0;
+    left:0;
 }
 
 .how-it-works .hiw-content .hiw-item-list .hiw-item {
@@ -173,14 +214,25 @@
     font-weight: 800;
 }
 
-.how-it-works .hiw-content .hiw-image-block {
-    width: 32vw;
-    height: 22vmax;
+.how-it-works .hiw-content .hiw-image-list {
+    width: 35vw;
+    height: 23vmax;
     margin-bottom:-3vmax;
-    margin-left: 2vw;
-    background-color: grey;
-    display: inline-block;
+    margin-left: 35vw;
 }
+
+.how-it-works .hiw-content .hiw-image-list .hiw-image {
+    display: none;
+    width:100%;
+    height:100%;
+}
+
+.how-it-works .hiw-content .hiw-image-list .hiw-image img {
+    height: 100%;
+}
+
+
+
 
 
 

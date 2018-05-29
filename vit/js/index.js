@@ -1,5 +1,6 @@
 var hiwSelectedItem = 0;
 setInterval(changeHowItWorksItem, 5000)
+$("#hiw-active-image").show();
 
 var injuriesSlider = document.getElementById("injuries-per-year-range");
 var injuriesValue = document.getElementById("injuries-per-year-val");
@@ -24,10 +25,21 @@ function learnMoreScroll(){
 }
 
 function hiwSelect(e) {
-    children = $(".hiw-item-list").children();
+    console.log(hiwSelectedItem)
+    var children = $(".hiw-item-list").children();
     children[hiwSelectedItem].removeAttribute("id");
-    hiwSelectedItem = children.index(e);
-    children[hiwSelectedItem].id = "hiw-active"
+    var newHiwSelectedItem = children.index(e);
+    console.log(hiwSelectedItem)
+
+    children[newHiwSelectedItem].id = "hiw-active"
+
+    children = $(".hiw-image-list").children();
+    $("#hiw-active-image").hide();
+    children[hiwSelectedItem].removeAttribute("id");
+    children[newHiwSelectedItem].id = "hiw-active-image";
+
+    $("#hiw-active-image").show();
+    hiwSelectedItem = newHiwSelectedItem;
 }
 
 
@@ -37,6 +49,12 @@ function changeHowItWorksItem() {
     hiwSelectedItem++;
     hiwSelectedItem %= 4;
     children[hiwSelectedItem].id = "hiw-active"
+
+    children = $(".hiw-image-list").children();
+    $("#hiw-active-image").hide();
+    children[hiwSelectedItem - 1].removeAttribute("id");
+    children[hiwSelectedItem].id = "hiw-active-image";
+    $("#hiw-active-image").show();
 }
 
 function toggleROICalc() {
@@ -73,7 +91,6 @@ function calculateROI(){
 }
 
 window.onload = function() {
-    
 };
 
 

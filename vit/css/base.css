@@ -10,6 +10,10 @@ a:hover {
     color: inherit;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .homepage{
     height:100vh;
     /*background-color: grey;*/
@@ -147,7 +151,7 @@ a:hover {
 }
 
 .modal .modal-text{
-    width: 15vw;
+    width: 18vw;
 
     position: absolute;
     left:2vw;
@@ -172,7 +176,7 @@ a:hover {
 }
 
 .modal .modal-form {
-    width: 28vw;
+    width: 25vw;
     height: 28vw;
     position: absolute;
     right:2vw;
