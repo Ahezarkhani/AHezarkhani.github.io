@@ -1,0 +1,28 @@
+body {
+    /*background-color: #F7F7FF;*/
+    margin-top: 200px;
+    background-color: #F7F7FF;
+}
+
+#logo {
+    position: fixed;
+    top: 5vh;
+    left: 54px;
+    width: 62px;
+    height: 62px;
+
+    z-index: 5;
+}
+
+.container {
+    position: fixed;
+    top: 230px;
+    height: 75vh;
+    max-width: 100%;
+    z-index: 1;
+    overflow-y: scroll;
+}
+
+.thin {
+    font-weight: 100 !important;
+}

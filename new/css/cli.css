@@ -1,0 +1,40 @@
+.cli {
+
+}
+
+.cli .background {
+    position: fixed;
+    top: 5vh;
+    left: 25vw;
+    background-color: #F7F7FF; /*434343*//*F7F7FF*//*1F2421*/
+    height: 100%;
+    width: 100%;
+    padding-top: 5vh;
+    height: 85vh;
+    width: 50vw;
+
+    /*box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);*/
+}
+
+.cli .text {
+    width: 50vw;
+    position: fixed;
+    top: 6vh;
+    left: 25vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    color: #1F2421;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 100;
+    line-height: 25%;
+    font-size: 22px;
+    padding-top: 1vh;
+    height: 85vh;
+}
+
+.cli .text p {
+}
+
+.cli .text b {
+    font-weight: 400;
+}
