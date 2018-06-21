@@ -1,9 +1,45 @@
 #athlete {
-    height: 65vh;
-
-    margin-top: 35vh;
-    width: 99vw;
+    margin-top: 150px;
+    padding-top: 150px;
+    min-width: 100%;
     margin-left: 0;
-    opacity: .2;
-    background-color: #707371;
+}
+
+#athlete h1 {
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+
+#athlete .week {
+    width: 100%;
+}
+
+#athlete .week .day {
+    vertical-align: top;
+    display: inline-block;
+    width: 12vw;
+    margin: .5vw;
+    margin-bottom: 20px;
+    font-style: italic;
+
+}
+
+#athlete .week .day .day-label {
+    width: 100%;
+    height: 2vw;
+    background-color: #1F2421;
+
+    font-size: 1.5vw;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 800;
+    color: #F7F7FF;
+
+}
+
+#athlete .week .day .workout {
+    font-family: 'Roboto Mono', monospace;
+    width: 100%;
+    overflow-x: wrap;
+
 }

@@ -6,7 +6,7 @@ body {
 
 #logo {
     position: fixed;
-    top: 5vh;
+    top: 20px;
     left: 54px;
     width: 62px;
     height: 62px;
@@ -16,7 +16,7 @@ body {
 
 .container {
     position: fixed;
-    top: 230px;
+    top: 210px;
     height: 75vh;
     max-width: 100%;
     z-index: 1;

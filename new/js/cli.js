@@ -16,7 +16,7 @@ $(".container").on('resize scroll', function() {
     if($(this).isInViewport()) {
       if(listedSections.indexOf(activeSection) == -1) { //element not in list
         // add the element to the cli
-        $('.text').append('<p>>>> arman the <b>'+activeSection+'</b></p>')
+        $('.cli').append('<p>>>> arman the <b>'+activeSection+'</b></p>')
         listedSections.push(activeSection);
 
         console.log(activeSection)
@@ -26,7 +26,7 @@ $(".container").on('resize scroll', function() {
     } else {
       if(listedSections.indexOf(activeSection) == listedSections.length - 1) {
         // remove the element from the cli
-        $('.text').children().last().remove();
+        $('.cli').children().last().remove();
         listedSections.splice(-1,1);
       }
     }

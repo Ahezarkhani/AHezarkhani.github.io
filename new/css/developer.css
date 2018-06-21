@@ -1,19 +1,12 @@
 #developer {
+    margin-top: 50px;
+
     width: 99vw;
     margin-left: 0;
     z-index: 1;
     position: relative;
 
     color: #1F2421;
-}
-
-#developer .vertical-divider {
-    height: 100%;
-    width: 5px;
-
-    position: absolute;
-    left: 48%;
-
 }
 
 #developer .experience-section {
@@ -30,9 +23,8 @@
 #developer .experience-section .experience-left {
     padding: 20px;
     position: absolute;
-    background-color: #F7F7FF;
 
-    right: 51vw;
+    right: 50vw;
 
     max-width: 40vw;
 
@@ -61,10 +53,9 @@
 }
 
 #developer .experience-section .experience-right {
-    background-color: #F7F7FF;
     position: absolute;
     padding: 20px;
-    left: 51vw;
+    left: 50vw;
     width: 500px;
     max-width: 40vw;
 
