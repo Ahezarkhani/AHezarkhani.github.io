@@ -51,8 +51,14 @@ function changeHowItWorksItem() {
     children[hiwSelectedItem].id = "hiw-active"
 
     children = $(".hiw-image-list").children();
+    console.log(children)
     $("#hiw-active-image").hide();
-    children[hiwSelectedItem - 1].removeAttribute("id");
+    console.log(hiwSelectedItem)
+    if (hiwSelectedItem !== 0){
+        children[hiwSelectedItem - 1].removeAttribute("id");
+    } else {
+        children[3].removeAttribute("id");
+    }
     children[hiwSelectedItem].id = "hiw-active-image";
     $("#hiw-active-image").show();
 }

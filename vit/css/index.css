@@ -8,22 +8,27 @@
 }
 
 .homepage .content .content-title {
-    font-size: 54px;
+    font-size: 48px;
+    font-weight: 600;
+
+    padding-bottom: 5px;
 }
 
 .homepage .content .content-description {
-    font-size: 30px;
+    font-size: 26px;
+    font-weight: 200;
 }
 
 .homepage .content button {
     margin-top:70px;
 
-    height:70px;
-    width: 250px;
+    height:65px;
+    width: 300px;
     background-color: white;
-    border: 1px solid black;
+    border: .5px solid black;
 
-    font-size: 20px;
+    font-size: 26px;
+    font-weight: 200;
 }
 
 .homepage .content button:hover {
@@ -42,46 +47,52 @@
 
 .reasons {
     margin-bottom:100px;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 .reasons .reason-info-card {
-    width: 29.5vw;
+    width: 27vw;
     margin: 1vw;
 
     display: inline-block;
-
+ 
+    vertical-align:top;
     text-align: center;
 }
 
 .reasons .reason-info-card img {
-    width: 10vw;
+    width: 8vw;
     margin-bottom: 3vw;
 }
 .reasons .reason-info-card .reason-info-title {
-    font-size: 2.5vw;
+    font-size: 2.3vw;
+    font-weight: 500;
 
     margin-bottom: 2vw;
 }
 .reasons .reason-info-card .reason-info-description {
-    font-size: 1.7vw;
+    font-size: 1.5vw;
 }
 
 
 /* info block */
 .info-block{
     text-align: center;
-    padding: 120px;
+    padding: 6vw;
 }
 
 #info-block-grey {
-    color: lightgrey;
+    color: #8E8E91;
     background-color:#2C2D31;
-    font-size: 40px;
+    font-size: 2.9vw;
+    line-height: 1.6;
 }
 #info-block-blue {
     color: black;
     background-color:#5AB9EA;
-    font-size: 30px;
+    font-size: 2.2vw;
+    line-height: 1.6;
 }
 
 
@@ -91,11 +102,12 @@
 }
 
 .stats .stats-intro {
-    font-size: 4vw;
+    font-size: 2.7vw;
     /*margin-left: 10vw;*/
     text-align: center;
     margin-bottom: 2vw;
-    font-weight: 800;
+    color: #2C2D31;
+    /*font-weight: 800;*/
 }
 
 .stats .stats-card {
@@ -103,21 +115,25 @@
     margin: 1vw;
 
     display: inline-block;
+    vertical-align:top;
 
     text-align: center;
 }
 .stats .vl {
-    height: 10vw;
-    width: 1px;
+    height: 15vw;
+    width: 5px;
     display: inline-block;
-    background-color: black;
+    background-color: #2C2D31;
 }
 .stats .stats-card .stats-title {
-    font-size: 5vw;
-    font-weight: 800;
+    padding-top: 2vw;
+    font-size: 4.5vw;
+    font-weight: 700;
+    color: #2C2D31;
 }
 .stats .stats-card .stats-description {
     font-size: 2vw;
+    color: #2C2D31;
 }
 
 
@@ -166,10 +182,12 @@
 
 .case-study-slider .case-study-info .case-study-button{
     font-size: 1.5vw;
+    font-weight: 200;
     margin-top: 1vw;
     height: 4vw;
     width: 20vw;
     background-color: white;
+    box-shadow: 2px 2px #666666;
 }
 
 .how-it-works {
@@ -259,12 +277,15 @@
 }
 
 .dashboard-info .dash-text .dash-title {
-    font-size: 2.5vw;
+    font-size: 2vw;
+    font-weight: 600;
 }
 
 .dashboard-info .dash-text .dash-description {
     margin-top: 1.5vw;
-    font-size: 1.5vw;
+    font-size: 1.4vw;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 
@@ -296,12 +317,15 @@
 }
 
 .arc-info .arc-text .arc-title {
-    font-size: 2.5vw;
+    font-size: 2vw;
+    font-weight: 600;
 }
 
 .arc-info .arc-text .arc-description {
     margin-top: 1.5vw;
-    font-size: 1.5vw;
+    font-size: 1.4vw;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 
