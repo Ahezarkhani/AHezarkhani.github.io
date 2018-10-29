@@ -1,0 +1,440 @@
+body{
+    font-family: Open Sans;
+    margin: 0px;
+    margin-top: 50px; /* same as navbar */
+}
+
+h1 {
+    font-size: 56px;
+    color: #5E5E5E;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #499FB9;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #5E5E5E;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #5E5E5E;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 100;
+    color: #4A4A4A;
+}
+
+hr {
+    width: 70vw;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 15vw;
+    margin-right: 0;
+
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #D8D8D8;
+    padding: 0; 
+}
+
+.navbar {
+    position: fixed;
+    top:0;
+    left:0;
+    height: 50px;
+    background-color: #499FB9;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+    display: inline-block;
+
+    z-index: 1;
+}
+
+.logo {
+    height: 40px;
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+    width: 300px;
+}
+.logo:hover {
+    cursor: pointer;
+}
+
+.logo img {
+    margin-top: 10px;
+    margin-left: 15px;
+    height: 35px;
+}
+
+.logo #logo-text {
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+    position: absolute;
+    top: 30%;
+    left: 60px;
+}
+
+
+.button-group {
+    display: inline-block;
+    float: right;
+}
+
+.button-group .button {
+    font-size: 15px;
+    font-weight: 800;
+    padding-top: 15px;
+    display: inline-block;
+    color: white;
+    height: 35px;
+    width: 100px;
+    text-align: center;
+}
+
+.button-group .button:hover {
+    cursor: pointer;
+    
+}
+
+.button-group #action-button {
+    background-color: #ACD3DF;
+}
+
+
+
+
+/* Sign Up Section */
+
+.sign-up-section {
+    height: wrap-content;
+    margin-bottom: 200px;
+
+}
+
+.sign-up-section .left {
+    position: absolute;
+    right: 50vw;
+    top: 50px;
+
+}
+.sign-up-section .left img {
+    width: 50vw;
+}
+
+.sign-up-section .left .intro-text {
+    position: absolute;
+    top: 27vw;
+    left: 10vw;
+    width: 25vw;
+}
+.sign-up-section .left .intro-text h1 {
+    font-size: 3vw;
+    color: #5E5E5E;
+    font-weight: 800;
+}
+
+
+
+.sign-up-section .right {
+    margin-top: 120px;
+    margin-left: 60vw;
+    width: 39vw;
+}
+
+
+.teacher-student-toggle {
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.teacher-student-toggle .toggle {
+    display: inline-block;
+
+    padding-top: 10px;
+    height: 40px;
+    width: 150px;
+
+    border-radius: 10px;
+    background-color: #D2D2D2;
+
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+}
+.teacher-student-toggle .toggle:hover {
+    cursor: pointer;
+}
+
+.teacher-student-toggle #active {
+    background-color: #499FB9;
+}
+
+
+
+/* Form */
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ACD3DF;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 200px;
+    height: 40px;
+    background-color: #5E5E5E;
+
+    color: white;
+    font-size: 20px;
+
+    border: none;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+
+
+
+/* What We Do Section */
+
+.what-we-do-section {
+    position: relative;
+
+    min-height: 25vw;
+    height: wrap-content;
+
+    margin-bottom: 100px;
+}
+
+.what-we-do-section .video {
+    position: absolute;
+    right: 45vw;
+    width: 40vw;
+    height: 25vw;
+}
+
+.what-we-do-section .description {
+    margin-left: 60vw;
+    width: 30vw;
+}
+
+/* Features Section */
+
+.features-section {
+    margin-bottom: 10px;
+
+}
+.features-section .header {
+    text-align: center;
+    margin-bottom: 40px;
+
+}
+
+.features-toggles {
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.features-toggles .ftoggle {
+    display: inline-block;
+
+    padding-top: 10px;
+    height: 40px;
+    width: 150px;
+
+    border-radius: 10px;
+    background-color: #D2D2D2;
+
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+}
+.features-toggles .ftoggle:hover {
+    cursor: pointer;
+}
+
+.features-toggles #factive-toggle {
+    background-color: #499FB9;
+}
+
+.features-list {
+    width: 70vw;
+    margin-left: 15vw;
+}
+
+.features-list .features-list-item {
+    display: inline-block;
+    width: 30vw;
+    position: relative;
+    padding-right: 4vw;
+    padding-bottom: 4vw;
+    
+}
+
+.features-list .features-list-item .flist-item-icon {
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    width: 40px;
+}
+
+.features-list .features-list-item .flist-item-icon img {
+    width: 100%;
+}
+
+.features-list .features-list-item .flist-item-text {
+    margin-left: 60px;
+
+}
+
+
+
+/* Scope and Sequence Section */
+
+.sns-section {
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.sns-section .sns-image-wrapper {
+    width: 50vw;
+    margin-left: 25vw;
+}
+
+.sns-section .sns-image-wrapper img {
+    width: 100%;
+}
+
+
+/* Why We Matter Section */
+
+.why-we-matter-section {
+    position: relative;
+    min-height: 25vw;
+    height: wrap-content;
+}
+
+.why-we-matter-section h1 {
+    font-size: 3vw;
+}
+
+.why-we-matter-section p {
+    font-size: 1.2vw;
+}
+
+.why-we-matter-section .wwm-left {
+    position: absolute;
+    left: 10vw;
+    top: 0px;
+    width: 30vw;
+}
+
+.why-we-matter-section .wwm-right {
+    margin-left: 50vw;
+    width: 30vw;
+    height: 30vw;
+}
+.why-we-matter-section .wwm-right img {
+    width: 100%;
+    height: 100%;
+}
+
+.why-we-matter-section .image-slider {
+    margin-top: 20px;
+    width:100%;
+}
+.why-we-matter-section .image-slider img {
+    width: 9.5%;
+}
+
+
+/* Statistics Section */
+.stats-section {
+    position: relative;
+    margin-top: 100px;
+    height: wrap-content;
+
+    margin-bottom: 200px;
+}
+
+.stats-section .header {
+    text-align: center;
+}
+
+
+.stats-section .graph {
+    position: absolute;
+    right: 52vw;
+    top: 100px;
+
+}
+
+.stats-section .graph img {
+    width: 40vw;
+}
+
+.stats-section .text {
+    text-align: center;
+    margin-left: 50vw;
+}
+
+.stats-section .stat {
+    padding-bottom: 1.5vw;
+}
+.stats-section .stat h1 {
+    padding-bottom: 3vw;
+    padding-bottom: 0;
+    line-height: 60%;
+}
+.stats-section .stat h4 {
+    padding-bottom: 1.2vw;
+}
+
+/* Map Section */
+
+.map-section {
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.map-section .map {
+    padding-left: 10vw;
+    width: 80vw;
+}
+
+.map-section .map img {
+    width: 100%;
+}
+
+
+/* Footer */
+.footer {
+    height: 300px;
+    width: 100%;
+    background-color: #499FB9;
+}
+
+
+
