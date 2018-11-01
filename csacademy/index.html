@@ -29,7 +29,7 @@
             <img src="images/ladder_image.png">
             <div class="intro-text">
                 <h1>
-                    SOMETHING AWESOME
+                    CMU CS ACADEMY
                 </h1>
                 <p>
                     A novel, world-class, online, interactive high school computer science curriculum that is entirely free.
@@ -79,7 +79,8 @@
         <div class="description">
             <h1> WHAT WE DO</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <b>We provide free, online, interactive computer science curriculum for high schools that is engaging, creative, rigorous and fun.</b>
+                CS Academy also includes teacher training, an online interactive textbook, online technical support and more!
             </p>
             
         </div>
@@ -91,20 +92,20 @@
         <div class="header">
             <h2>FEATURES</h2>
             <span class="features-toggles">
-                <span class="ftoggle" id="factive-toggle">For Teachers</span>
-                <span class="ftoggle">For Students</span>
+                <span class="ftoggle" id="factive-toggle" onclick="showStudentsFeatures()">For Students</span>
+                <span class="ftoggle" id="finactive-toggle" onclick="showTeachersFeatures()">For Teachers</span>
             </span>
         </div>
 
-        <div class="features-list">
+        <div class="features-list" id="features-list-students">
             <div class="features-list-item">
                 <div class="flist-item-icon">
                     <img src="images/settings_icon.png">
                 </div>
                 <div class="flist-item-text">
-                    <h4>Example Feature</h4>
+                    <h4>Interactive Notes</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  commodo consequat.
+                        Our interactive notes include interactive questions and coding exercises that give students the power to test their own understanding and pace themselves.
                     </p>
                 </div>
             </div>
@@ -113,9 +114,9 @@
                     <img src="images/settings_icon.png">
                 </div>
                 <div class="flist-item-text">
-                    <h4>Example Feature</h4>
+                    <h4>In-Browser &amp; Text-based Python Programming</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  commodo consequat.
+                        Our platform integrates Brython, a powerful in-browser python interpreter, to allow students to write real Python code from any browser
                     </p>
                 </div>
             </div>
@@ -124,9 +125,9 @@
                     <img src="images/settings_icon.png">
                 </div>
                 <div class="flist-item-text">
-                    <h4>Example Feature</h4>
+                    <h4>Image Inspector Tool</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  commodo consequat.
+                        CS Academy's Image Inspector Tool empowers students to understand what their code is doing in an interactive and visual way.
                     </p>
                 </div>
             </div>
@@ -135,20 +136,77 @@
                     <img src="images/settings_icon.png">
                 </div>
                 <div class="flist-item-text">
-                    <h4>Example Feature</h4>
+                    <h4>CMU student-authored graphical content</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  commodo consequat.
+                        Students in CS Academy learn by working on fun, graphics and animations problems developed by a team of CMU students.
                     </p>
                 </div>
             </div>
         </div>
+
+
+
+        <div class="features-list" id="features-list-teachers">
+            <div class="features-list-item">
+                <div class="flist-item-icon">
+                    <img src="images/settings_icon.png">
+                </div>
+                <div class="flist-item-text">
+                    <h4>Online Support for teachers by CMU</h4>
+                    <p>
+                        We have an online community where teachers can collaborate and get questions answered by a team of CMU Students.
+                    </p>
+                </div>
+            </div>
+            <div class="features-list-item">
+                <div class="flist-item-icon">
+                    <img src="images/settings_icon.png">
+                </div>
+                <div class="flist-item-text">
+                    <h4>Autograded Exercises</h4>
+                    <p>
+                        All of our excercises are autograded, allowing teachers to spend less time grading work and more time helping students.
+                    </p>
+                </div>
+            </div>
+            <div class="features-list-item">
+                <div class="flist-item-icon">
+                    <img src="images/settings_icon.png">
+                </div>
+                <div class="flist-item-text">
+                    <h4>Teacher Portal + Gradebook</h4>
+                    <p>
+                        Our tools give teachers the ability to manage every student's individual progress and observe how the class is doing at a glance.
+                    </p>
+                </div>
+            </div>
+            <div class="features-list-item">
+                <div class="flist-item-icon">
+                    <img src="images/settings_icon.png">
+                </div>
+                <div class="flist-item-text">
+                    <h4>(PLN) Network of CS Academy Teachers</h4>
+                    <p>
+                        We connect CS Academy teachers allowing them to collaborate, share, and learn. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
     </div>
 
     <hr>
 
     <div class="sns-section">
         <h2>
-            SCOPE + SEQUENCE
+            CS1 SCOPE AND SEQUENCE
         </h2>
 
         <div class="sns-image-wrapper">
@@ -161,7 +219,10 @@
         <div class="wwm-left">
             <h1>WHY WE MATTER</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <strong>Schools are lacking engaging curriculum to bridge the continuum.</strong>
+                <br>
+                <br>
+                The K-8 space is filled with engaging yet simple CS content. The next time many students see CS is in an AP computer science class. 
             </p>
         </div>
 
@@ -194,15 +255,15 @@
         </div>
         <div class="text">
             <div class="stat">
-                <h1>9,723</h1>
-                <h4>Minions Drawn</h4>
+                <h1>1,208+</h1>
+                <h4>Scotty Dogs Drawn</h4>
             </div>
             <div class="stat">
                 <h1>1,368,255</h1>
                 <h4>Lines of Code Written</h4>
             </div>
             <div class="stat">
-                <h1>14,276</h1>
+                <h1>4,690+</h1>
                 <h4>Creative Tasks Made</h4>
             </div>
 

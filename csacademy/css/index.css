@@ -274,13 +274,17 @@ input[type=submit] {
     cursor: pointer;
 }
 
-.features-toggles #factive-toggle {
+#factive-toggle {
     background-color: #499FB9;
 }
 
 .features-list {
     width: 70vw;
     margin-left: 15vw;
+}
+
+#features-list-teachers {
+    display: none;
 }
 
 .features-list .features-list-item {
