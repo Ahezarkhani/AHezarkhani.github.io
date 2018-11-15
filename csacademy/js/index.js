@@ -18,3 +18,24 @@ function showStudentsFeatures(){
     factive.setAttribute('id', 'finactive-toggle');
     finactive.setAttribute('id', 'factive-toggle');
 }
+
+$("#sign-up-form").submit(function(event) {
+    event.preventDefault();
+
+    let url = "https://backend.academy.cs.cmu.edu/api/v0/users/guest-register/";
+    let data = {
+        user_type: $('.user_type_radio:checked').val(),
+        name: $('#name').val(),
+        email: $('#email').val(),
+        school_name: $('#schoolname').val(),
+        password: $('#password').val()
+    };
+
+    let request = $.post(
+        url,
+        data,
+        function(x){console.log(x)},
+        "json"
+    );
+    console.log("hello")
+});

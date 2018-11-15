@@ -5,6 +5,8 @@
     <meta charset="utf-8">
 
     <title>CS Academy</title>
+
+    <link rel="icon" type="image/png" href="https://academy.cs.cmu.edu/favicons/favicon-32x32.png" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
     <link rel="stylesheet" href="css/index.css">
 </head>
@@ -18,9 +20,15 @@
         </div>
 
         <div class="button-group">
-            <div class="button">Try It Out</div>
-            <div class="button" id="action-button">Sign Up</div>
-            <div class="button">Log In</div>
+            <a href="https://academy.cs.cmu.edu/tryitout">
+                <div class="button">Try It Out</div>
+            </a>
+            <a href="#">
+                <div class="button" id="action-button">Sign Up</div>
+            </a>
+            <a href="https://academy.cs.cmu.edu/login">
+                <div class="button">Log In</div>
+            </a>
         </div>
     </div>
 
@@ -37,43 +45,57 @@
             </div>
         </div>
         <div class="right">
-            <h2>Sign Up</h2>
+            <h2 class="no-bottom-margin">Sign Up</h2>
+            <h5 class="blue">for a demo</h5>
 
-            <form>
+            <form id="sign-up-form">
 
                 <div class="teacher-student-toggle">
                     <h4>Who Are You?</h4>
-                    <div class="toggle" id="active">
-                        Teacher
-                    </div>
-                    <div class="toggle">
-                        Student
-                    </div>
+
+                    <label class="container">
+                        <p class="blue">Teacher</p>
+                        <input type="radio" checked="checked" value="teacher" name="user_type" class="user_type_radio">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">
+                        <p class="blue">Student</p>
+                        <input type="radio" name="user_type" value="student" class="user_type_radio">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">
+                        <p class="blue">Other</p>
+                        <input type="radio" name="user_type" value="other" class="user_type_radio">
+                        <span class="checkmark"></span>
+                    </label>
+
+
                 </div>
 
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name">
 
-                <label for="email">School Email</label>
+                <label for="email">Email</label>
                 <input type="text" id="email" name="email">
 
-                <label for="sdistrict">School District</label>
-                <input type="text" id="sdistrict" name="sdistrict">
+                <label for="schoolname">School Name</label>
+                <input type="text" id="schoolname" name="schoolname">
 
-                <label for="state">State</label>
-                <input type="text" id="state" name="state">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
 
-                <p>
-                    Upon creating a class, you will be emailed a unique class code for your students to sign up. 
+                <p class="light-text">
+                    I’m interested in using CS Academy for the 2019 to 2020 school year and want to be notified about it.
                 </p>
-                <input type="submit" value="Create Class">
+                <input type="submit" value="Sign Up For A Demo">
             </form>
         </div>
     </div>
 
     <div class="what-we-do-section">
         <div class="video">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JtUIQz_EkUw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+           <!--  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JtUIQz_EkUw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+           <iframe src="https://player.vimeo.com/video/300648678" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
 
         <div class="description">
@@ -100,7 +122,7 @@
         <div class="features-list" id="features-list-students">
             <div class="features-list-item">
                 <div class="flist-item-icon">
-                    <img src="images/settings_icon.png">
+                    <img src="images/features_icons/interactive_notes.svg">
                 </div>
                 <div class="flist-item-text">
                     <h4>Interactive Notes</h4>
@@ -111,7 +133,7 @@
             </div>
             <div class="features-list-item">
                 <div class="flist-item-icon">
-                    <img src="images/settings_icon.png">
+                    <img src="images/features_icons/in_browser_text_based_python_programming.svg">
                 </div>
                 <div class="flist-item-text">
                     <h4>In-Browser &amp; Text-based Python Programming</h4>
@@ -122,7 +144,7 @@
             </div>
             <div class="features-list-item">
                 <div class="flist-item-icon">
-                    <img src="images/settings_icon.png">
+                    <img src="images/features_icons/inspector.svg">
                 </div>
                 <div class="flist-item-text">
                     <h4>Image Inspector Tool</h4>
@@ -133,7 +155,7 @@
             </div>
             <div class="features-list-item">
                 <div class="flist-item-icon">
-                    <img src="images/settings_icon.png">
+                    <img src="images/features_icons/cmu_student_content.svg">
                 </div>
                 <div class="flist-item-text">
                     <h4>CMU student-authored graphical content</h4>
@@ -149,7 +171,7 @@
         <div class="features-list" id="features-list-teachers">
             <div class="features-list-item">
                 <div class="flist-item-icon">
-                    <img src="images/settings_icon.png">
+                    <img src="images/features_icons/online_support_for_teachers.svg">
                 </div>
                 <div class="flist-item-text">
                     <h4>Online Support for teachers by CMU</h4>
@@ -160,7 +182,7 @@
             </div>
             <div class="features-list-item">
                 <div class="flist-item-icon">
-                    <img src="images/settings_icon.png">
+                    <img src="images/features_icons/autograder.svg">
                 </div>
                 <div class="flist-item-text">
                     <h4>Autograded Exercises</h4>
@@ -171,7 +193,7 @@
             </div>
             <div class="features-list-item">
                 <div class="flist-item-icon">
-                    <img src="images/settings_icon.png">
+                    <img src="images/features_icons/teacher_portal_and_gradebook.svg">
                 </div>
                 <div class="flist-item-text">
                     <h4>Teacher Portal + Gradebook</h4>
@@ -182,7 +204,7 @@
             </div>
             <div class="features-list-item">
                 <div class="flist-item-icon">
-                    <img src="images/settings_icon.png">
+                    <img src="images/features_icons/network.svg">
                 </div>
                 <div class="flist-item-text">
                     <h4>(PLN) Network of CS Academy Teachers</h4>
@@ -275,7 +297,7 @@
     <div class="map-section">
         <h2>Over 40 schools and 1,000 students</h2>
         <div class="map">
-            <img src="images/map.png">
+            <img src="images/map.svg">
         </div>
     </div>
 

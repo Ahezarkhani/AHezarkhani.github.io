@@ -16,6 +16,15 @@ h2 {
     color: #499FB9;
 }
 
+.no-bottom-margin {
+    margin-bottom:0;
+}
+
+.blue {
+    margin-top:0;
+    color: #499FB9;
+}
+
 h3 {
     font-size: 24px;
     font-weight: 600;
@@ -32,6 +41,10 @@ p {
     font-size: 18px;
     font-weight: 100;
     color: #4A4A4A;
+}
+
+.light-text{
+    color: #979797;
 }
 
 hr {
@@ -153,14 +166,16 @@ hr {
 .sign-up-section .right {
     margin-top: 120px;
     margin-left: 60vw;
-    width: 39vw;
+    width: 30vw;
+}
+.sign-up-section .right .light-text {
+    width: 25vw;
 }
 
 
 .teacher-student-toggle {
     color: white;
-    padding-bottom: 10px;
-    padding-top: 20px;
+    padding-bottom: 5px;
 }
 
 .teacher-student-toggle .toggle {
@@ -188,10 +203,11 @@ hr {
 
 
 /* Form */
-input[type=text], select {
-    width: 100%;
+input[type=text], input[type=password], select {
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
+    margin-right: 20%;
     display: inline-block;
     border: 1px solid #ACD3DF;
     border-radius: 4px;
@@ -199,9 +215,9 @@ input[type=text], select {
 }
 
 input[type=submit] {
-    width: 200px;
+    width: 300px;
     height: 40px;
-    background-color: #5E5E5E;
+    background-color: #499FB9;
 
     color: white;
     font-size: 20px;
@@ -210,6 +226,75 @@ input[type=submit] {
     border-radius: 4px;
 
     cursor: pointer;
+}
+
+/* Custom Radio Icons */
+/* The container */
+.container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 14px;
+    width: 14px;
+    background-color: white;
+    border-radius: 50%;
+
+    border-style: solid;
+    border-width: 4px;
+    border-color: #499FB9;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #499FB9;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #499FB9;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
 }
 
 
@@ -435,7 +520,7 @@ input[type=submit] {
 
 /* Footer */
 .footer {
-    height: 300px;
+    height: 70px;
     width: 100%;
     background-color: #499FB9;
 }
