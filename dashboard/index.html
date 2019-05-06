@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>mesa dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">mesa</div>
+            <div class="nav-button" id="file-button" onclick="setCurrentPage('file-upload-page')">
+                File Management
+            </div>
+            <div class="nav-button" id="gallery-button" onclick="setCurrentPage('gallery-page')">
+                Gallery
+            </div>
+        </div>
+
+
+        <div class="file-upload-page">
+            <div class="right">
+                <h1>
+                    Upload a New PDF:
+                </h1>
+                <form action="#" onsubmit="return uploadFile();" class="file-upload" id="file-upload-1">
+                    <input id="file-input" type="file"><br><br>
+                    <input class="submit-button" type="submit">
+                </form>
+            </div>
+            <div class="left">
+                <h1>
+                    Browse your files:
+                </h1>
+                <div style="position:relative;width:50%">
+                    <table class="filesTable" id="files">
+                      <tr>
+                        <td>File Name</td>
+                        <td>Link to File</td>
+                      </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-page">
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-storage.js"></script>
+        <script>
+            var config = {
+              apiKey: "AIzaSyC-9FQfUwHb96FYt-N7IiF-EuJdK0Z625E",
+              authDomain: "mesa-capstone.firebaseapp.com",
+              databaseURL: "https://mesa-capstone.firebaseio.com",
+              projectId: "mesa-capstone",
+              storageBucket: "mesa-capstone.appspot.com",
+              messagingSenderId: "164645092719"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script type="text/javascript" src="index.js" ></script>
+    </body>
+</html>

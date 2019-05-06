@@ -1,0 +1,115 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 70px;
+}
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    padding: 0;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: black;
+}
+
+.navbar .logo {
+    position: fixed;
+    top:10;
+    left:20;
+    color: white;
+    font-weight: 800;
+    font-size: 30;
+}
+
+.navbar .nav-button {
+    position: fixed;
+    top:20;
+    color: white;
+    font-size: 20;
+}
+.navbar .nav-button:hover {
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.navbar #file-button {
+    right:120;
+}
+
+.navbar #gallery-button {
+    right:30;
+}
+
+/* hidden to start*/
+.gallery-page{
+    display: none;
+}
+
+
+.right {
+    width: 50%;
+    position: absolute;
+    top: 70;
+    right:-70;
+    margin: 70;
+}
+
+.right .file-upload {
+    margin: 20px;
+}
+input[type=submit] {
+    padding:10px 30px;
+    background: black;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    color: white;
+    font-weight: 800;
+    font-size: 20;
+}
+
+
+
+#files {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#files td, #files th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#files tr:nth-child(even){background-color: #f2f2f2;}
+
+#files tr:hover {background-color: #ddd;}
+
+#files th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+#files:hover {
+    cursor: pointer;
+}
+
+
+
+
+.screenshot {
+    width: 44vw;
+    margin-left: 2.4vw;
+    margin-right: 2.4vw;
+    margin-bottom: 2.4vw;
+    box-shadow: 1px 1px;
+
+}
+
+
+
