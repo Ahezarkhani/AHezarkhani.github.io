@@ -1,0 +1,9 @@
+.container {
+    padding-left:10vw;
+    padding-right:10vw;
+    width: 80vw;
+}
+
+table td, table td * {
+    vertical-align: top;
+}

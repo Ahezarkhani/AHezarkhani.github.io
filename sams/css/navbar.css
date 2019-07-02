@@ -1,0 +1,50 @@
+body {
+    padding:0px;
+    margin: 0px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+nav {
+    padding: 10px;
+    height:60px;
+    font-size: 22px;
+    background-color: black;
+    color: white;
+}
+
+.align-left {
+    float:left;
+}
+
+.align-right {
+    float:right;
+}
+
+
+.thin {
+    font-weight: lighter;
+}
+
+a {
+    color: inherit;
+}
+
+nav table a {
+    font-size:15px;
+}
+nav table a:hover {
+    color:inherit;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+b {
+    font-weight: bolder;
+}
+
+.container {
+    padding-left:10vw;
+    padding-right:10vw;
+    width: 80vw;
+}
+
