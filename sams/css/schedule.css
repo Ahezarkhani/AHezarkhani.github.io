@@ -7,3 +7,7 @@ table {
 
   border-collapse: collapse;
 }
+
+.notes-container{
+    padding-left: 5vw;
+}

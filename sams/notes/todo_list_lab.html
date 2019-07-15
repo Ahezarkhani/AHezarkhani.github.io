@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SAMS 19</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"/>
+        <link href="../css/navbar.css" rel="stylesheet" type="text/css">
+        <link href="../css/schedule.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <nav>
+            <span class="align-left">
+                <a href="../index.html">SAMS 19</a>
+            </span>
+            <span class="align-right">
+                <table>
+                    <tr> <!-- a table row -->
+                        <td><b style="margin-right:40px">Jr. Programming</b></td> <!-- a table data cell -->
+                        <td><b>Jr. Projects</b></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="thin">
+                                <a href="../programming_info.html">Info</a>
+                            </span>
+                            <span class="thin">
+                                <a href="../programming_schedule.html">Schedule</a>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="thin">
+                                <a href="../projects_info.html">Info</a>
+                            </span>
+                            <span class="thin">
+                                <a href="../projects_schedule.html">Schedule</a>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </span>
+        </nav>
+
+
+        <div class="container">
+            <h1>Todo-List Lab</h1>
+            <br>
+            <h2>Let's build a Todo-List!</h2>
+            <p>
+                Goals:
+                <ol>
+                    <li>On-Submit Events</li>
+                    <li>On-Click Events</li>
+                    <li>DOM Element Creation</li>
+                    <li>DOM Element Insertion</li>
+                    <li>DOM Element Removal</li>
+                </ol>
+                <img src="todo-example.png" style="width:100%;">
+            </p>
+
+<br>
+<br>
+<br>
+            <h2>Step 0: Set Up</h2>
+
+            <div class="notes-container">
+                <p>First, download the starter-folder from <a href="TODO_starter.zip">here</a>.</p>
+                <p>
+                    In that folder, you'll see three files:
+                    <ol>
+                        <li>index.html</li>
+                        <li>index.js</li>
+                        <li>styles.css</li>
+                    </ol>
+                </p>
+                <p>First, let's take a look at index.html:</p>
+                <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;TODO List&lt;/title&gt;
+
+            &lt;link href=&quot;styles.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;!-- Your code here! --&gt;
+
+            &lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;</code></pre>
+                <p>
+                    In the header, we set a title and link to styles.css. At the bottom
+                    of the body, we link to index.js. That's it -- pretty simple!
+                </p>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+            <h2>Step 1: Adding the Form</h2>
+            <div class="notes-container">
+                <p>
+                    If you look at the image at the top of this page, you'll see a
+                    sticky note at the center of the page with a button below it. That's
+                    actually a form with two inputs (one with type="text" and the
+                    other with type="submit"), as shown below:
+                </p>
+                <pre><code class="language-html">&lt;form id=&quot;form1&quot;&gt;
+        &lt;input type=&quot;text&quot; id=&quot;todo-input&quot;&gt;&lt;br&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Just do it!&quot;&gt;
+    &lt;/form&gt;</code></pre>
+                <p>
+                    Here, we have a form with
+                    <code class="language-html">id="form1"</code> and a
+                    text input with <code class="language-html">id="todo-input"</code>.
+                    These IDs will give us the ability to work with these DOM elements
+                    in javascript. We'll see exactly what I mean in step 2.<br>
+                    We also have a submission input with <code class="language-html">value="Just Do It!"</code>.
+                    The value attribute allows us to specify what text we want on our submission button.<br><br>
+                    Add this form to the body of your html file!
+                </p>
+                <p>
+                    Not too pretty, right? To make it prettier, try adding this to the css code:
+                </p>
+                <pre><code class="language-css">body {
+        margin:0;
+        background-image: url("https://images.unsplash.com/photo-1510148199876-8a856ee41d42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80")
+    }
+
+    #form1 {
+        width:100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #form1 input[type=text] {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 20px;
+        width: 200px;
+        height: 160px;
+        padding: 6px 6px;
+        box-sizing: border-box;
+        border-top: 40px solid #FFFF88;
+        background-color: #FFFFA8;
+        text-align: top;
+    }
+
+    #form1 input[type=text]:focus{
+        outline: none;
+    }</code></pre>
+                <p>
+                    In that css code, we're using a font-family named "Permanent Marker."
+                    This isn't a built-in font, so we need to import it from Google's
+                    Font library. To do so, include this line in the header of your HTML
+                    file, above the css-link:
+                </p>
+                <pre><code class="language-css">&lt;link href=&quot;https://fonts.googleapis.com/css?family=Permanent+Marker&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
+
+                <p>To see other Google Fonts, visit their website at: <a href="https://fonts.google.com">fonts.google.com</a></p>
+                <p>
+                    Now, we have a pretty site, but when we try to use it, nothing happens. Let's fix that!!!
+                </p>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+            <h2>Step 2: Adding the On-Submit Event Handler</h2>
+            <div class="notes-container">
+                <p>
+                    To add the on-submit handler, we'll be using a tool called JQuery.
+                    JQuery is an extremely popular and powerful tool that makes
+                    certain things in Javascript extremely easy. You won't need
+                    to know much about how javascript works, but in order to use it,
+                    we'll need to import it. To do so, add the following script tag
+                    to the bottom of your body tag, but above the link to "index.js":
+                 </p>
+                 <pre><code class="language-html">&lt;script src=&quot;https://code.jquery.com/jquery-3.4.1.min.js&quot; integrity=&quot;sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</code></pre>
+                 <p>
+                    Now, let's add the following code to index.js:
+                 </p>
+                 <pre><code class="language-js">$("#form1").submit(function(e) {
+      // Your code here!
+    });
+    </code></pre>
+                <p>
+                    This code is basically saying <i>"When the form with id 'form1' is
+                    submitted, run this function."</i> So, when you submit the form,
+                    whatever code you have inside of those curly-brackets should
+                    run. To prove this to ourselves, let's add a console.log in there, like so:
+                </p>
+                <pre><code class="language-js">$("#form1").submit(function(e) {
+      console.log("form submitted!")
+    });
+    </code></pre>
+                <p>
+                    Now, every time you submit the form, <i>form submitted!</i>
+                    should be logged to the console. If you try it, though, you'll
+                    notice that those words appear only briefly, then they disappear!<br>
+                    That's because by default, when a form is submitted, the entire
+                    page refreshes. But don't worry -- we can fix this by adding
+                    the following line of code:
+                </p>
+                <pre><code class="language-js">$("#form1").submit(function(e) {
+      e.preventDefault();
+      console.log("form submitted!")
+    });
+    </code></pre>
+
+                <p>
+                    Now it works -- we have code that runs every single time our form
+                    is submitted. Woooo <br>
+                    Our website is still kind of boring, though. Let's actually do something
+                    with the text that's being input. For now, add the following code
+                    to simply log whatever the user inputs:
+                </p>
+                <pre><code class="language-js">$("#form1").submit(function(e) {
+      e.preventDefault();
+
+      var todo_input = document.getElementById("todo-input");
+      var todo_text = todo_input.value;
+
+      console.log(todo_text)
+    });
+    </code></pre>
+                <p>
+                    We added two lines of code. In the first one, we have a statement saying,
+                    <code class="language-js">document.getElementById("todo-input")</code>,
+                    which basically asks the HTML document, <i>"Hey -- Could you give
+                    me the element that has the id "todo-input."</i> Then, it stores
+                    that element in a variable called <code class="language-js">todo_input</code>.<br>
+                    To get the value that the user typed, we store <code class="language-js">todo_input.value</code>
+                    in a variable called <code class="language-js">todo_text</code>, and to
+                    prove that it all worked, we log that text to the console! Run that code now, and you'll see
+                    that every time you submit the form, whatever you type is logged.<br>
+                    You'll also probably notice something annoying: every time you want to resubmit the form, you
+                    have to delete whatever is in the input. Wouldn't it be nice if we
+                    could just do that in code??? You can! To empty, or reset, the
+                    text input, add the following line of code to the script:
+                </p>
+                <pre><code class="language-js">todo_input.value="";</code></pre>
+                <p>
+                    Now, we have a form that runs javascript code upon submission -- great!
+                    I'll be the first to admit, however, that this javascript code, although works, doesn't do much -- let's change that now!
+                </p>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+            <h2>Step 3: Inserting Elements to the DOM</h2>
+            <div class="notes-container">
+                <p>
+                    Right now, the javascript code simply logs whatever text the
+                    user types. However, we want to add that text to the page on
+                    a sticky-note. To start, let's replace that <code class="language-js">console.log</code>
+                    with a call to a function:
+                </p>
+                <pre><code class="language-js">$("#form1").submit(function(e) {
+      e.preventDefault();
+
+      var todo_input = document.getElementById("todo-input");
+      var todo_text = todo_input.value;
+
+      addNewItem(todo_text);
+
+      todo_input.value="";
+    });
+
+
+    function addNewItem(todo_text){
+      // Your code here!
+    }</code></pre>
+                <p>
+                    Now the code will store the text that the user types inside of
+                    <code class="language-js">todo_text</code> and then pass that
+                    value to a function to add a new item -- great.<br>
+                    Adding elements to the DOM is a two-step process:
+                    <ol>
+                        <li>Construct the DOM Element in Javascript</li>
+                        <li>Append the DOM Element to the HTML Document, using Javascript</li>
+                    </ol>
+                    We'll start with step one.
+                </p>
+                <br>
+                <h3>Constructing DOM Elements</h3>
+                <p>
+                    Whenever I construct a DOM element in Javascript, I find it
+                    easier if I design it in HTML first, so I also did that for
+                    this to-do list application. Each sticky-note, if built in HTML
+                    would look like this:
+                </p>
+                <pre><code class="language-html">&lt;div class=&quot;todo_card&quot;&gt;
+        &lt;p&gt;todo-list Item!&lt;/p&gt;
+    &lt;/div&gt;</code></pre>
+                <p>
+                    That DOM element is composed of a <code class="language-html">&lt;div&gt;</code> element with
+                    <code class="language-html">class="todo_card"</code> and
+                    a child <code class="language-html">&lt;p&gt;</code> node. The text
+                    will be inside of the <code class="language-html">&lt;p&gt;</code> node.<br>
+                    Great -- now we know what our element would look like IF we were writing
+                    HTML, but we want to use Javascript so we can dynamically create
+                    new elements. So, let's write that Javascript now.<br>
+                    Let's start with the construction of the <code class="language-html">&lt;div&gt;</code>
+                    element:
+                </p>
+                <pre><code class="language-js">// Create new todo div to store all todo content
+    var todo_card = document.createElement("div");
+    todo_card.classList.add("todo_card");</code></pre>
+                <p>
+                    On the first line, we ask the document to create a new div element and we
+                    store it in a variable named <code class="language-js">todo_card</code>.
+                    Then, we add a class, called <i>todo_card</i> to that element.<br>
+                    Next, let's create the <code class="language-html">&lt;p&gt;</code>
+                    element:
+                </p>
+
+                <pre><code class="language-js">// Put the todo item in a p
+    var todo_text_elem = document.createElement("p");
+    todo_text_elem.innerHTML = todo_text;</code></pre>
+                <p>
+                    This code, similar to the last code-block, creates a new p element
+                    and stores it in a variable named <code class="language-js">todo_text_elem</code>.<br>
+                    On the next line, it sets the <code class="language-js">innerHTML</code>, or the text
+                    inside of the <code class="language-js">&lt;p&gt;</code> element, to be the user's input.
+                </p>
+
+                <p>
+                    Now, we have the <code class="language-html">&lt;div&gt;</code> and
+                    <code class="language-html">&lt;p&gt;</code> elements. Next, let's
+                    put them together to create one element that we can append
+                    to the document! Let's do it:
+                </p>
+
+                <pre><code class="language-js">todo_card.appendChild(todo_text_elem);</code></pre>
+
+                <p>
+                    Here, we're appending the <code class="language-html">&lt;p&gt;</code>
+                    element that we just created, stored in <code class="language-js">todo_text_elem</code>,
+                    to the <code class="language-html">&lt;div&gt;</code> element, stored in
+                    <code class="language-js">todo_card</code>, creating one element that
+                    we can add to the HTML document.
+                </p>
+
+                <br>
+                <h3>Inserting Elements to the DOM</h3>
+                <p>
+                    Before we write more javascript code, we have to have a place in
+                    HTML where we can add these elements to. Add the following code
+                    to index.html to give us a place to append all of our our sticky-notes:
+                </p>
+                <pre><code class="language-html">&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;</code></pre>
+
+                <p>
+                    Lastly, add the following line of code to index.js to append your
+                    element to the DOM:
+                </p>
+                <pre><code class="language-js">document.getElementById("container").appendChild(todo_card);</code></pre>
+
+                <p>
+                    When you run the code, you can see that it works! Woo!<br>
+                    Add the following code to styles.css to make it all look better:
+                </p>
+                <pre><code class="language-css">#container {
+        margin: 20px;
+    }
+
+    .todo_card {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 20px;
+        width: 200px;
+        height: 160px;
+        padding: 10px;
+        border-top: 40px solid #FFFF88;
+        background-color: #FFFFA8;
+        display: inline-block;
+        margin: 20px 20px 0px 0px;
+
+    }
+    </code></pre>
+                <p>
+                    The best part of having a To-do list is finishing items
+                    and removing them, right? We'll show you how to do that next,
+                    and learn about Adding On-Click events along the way.
+                </p>
+            </div>
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+            <h2>Step 4: Adding the On-Click Event to Remove Elements from the DOM</h2>
+            <div class="notes-container">
+                <p>
+                    It would be really annoying if you couldn't remove items from your todo list, right?
+                    Let's add a feature to make it such that when a user clicks on a sticky-note,
+                    it is removed. To do so, let's head over to javascript and add whats called an event listener.
+                </p>
+                <pre><code class="language-js">todo_card.addEventListener("click", function(){
+      // Your code here!
+    });</code></pre>
+                <p>
+                    This piece of code adds an event listener to the <code class="language-js">todo_card</code>
+                    element. In english, that piece of code is saying <i>"Hey Javascript, every time the todo_card
+                    element is clicked, call this function."</i>
+                </p>
+                <p>
+                    So, if we said we wanted to remove a sticky-note every time the element is clicked, we
+                    have to replace <code class="language-js">// Your code here!</code> with
+                    code to remove the todo_card element. This is trickier than you may think, though. <br>
+                    The code in that function isn't running now -- it runs when something is clicked,
+                    but we don't know when that will be. As such, we need a way to
+                    identify the sticky-note whenever that happens.<br>
+                    As such, we'll have to give the <code class="language-js">todo_card</code>
+                    element an id, like so:
+                </p>
+                <pre><code class="language-js">var todo_card_id = String(Math.random())
+    todo_card.id = todo_card_id</code></pre>
+                <p>
+                    We start by creating a new variable that stores a random number.
+                    We're using a random number because we want our IDs to be unique
+                    and we can assume that these random numbers won't repeat.<br>
+                    DISCLAIMER: You should NOT always use this, because random numbers DO repeat.
+                    We're just using this for this example, but it is generally
+                    not great practice.<br>
+                    the next line sets the id of the <code class="language-js">todo_card</code>
+                    element to the value we just produced.<br><br>
+                    Now that we have a unique ID in each of our sticky-notes, we can
+                    simply replace <code class="language-js">// Your code here!</code>
+                    in our javascript file with the following line of code:
+                </p>
+                <pre><code class="language-js">document.getElementById(todo_card_id).remove()</code></pre>
+
+                <p>
+                    This line asks the document <i>"Can I have the element that
+                    has an ID equal to <code class="language-js">todo_card_id</code>?"</i>
+                    which is the value we just calculated!<br>
+                </p>
+            </div>
+
+            <br><br>
+            <br><br>
+
+            <h2>That's it!</h2>
+            <p>
+                You did it! You made a todo-list application using DOM manipulation.
+
+                <br><br>
+
+                You'll notice that if you refresh, nothing is saved. That's
+                because there's no back-end (hint hint, we'll learn
+                that next).
+            </p>
+
+
+
+
+
+
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+    </body>
+</html>
