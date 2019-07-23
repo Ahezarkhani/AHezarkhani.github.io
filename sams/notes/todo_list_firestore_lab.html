@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SAMS 19</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"/>
+        <link href="../css/navbar.css" rel="stylesheet" type="text/css">
+        <link href="../css/schedule.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <nav>
+            <span class="align-left">
+                <a href="../index.html">SAMS 19</a>
+            </span>
+            <span class="align-right">
+                <table>
+                    <tr> <!-- a table row -->
+                        <td><b style="margin-right:40px">Jr. Programming</b></td> <!-- a table data cell -->
+                        <td><b>Jr. Projects</b></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="thin">
+                                <a href="../programming_info.html">Info</a>
+                            </span>
+                            <span class="thin">
+                                <a href="../programming_schedule.html">Schedule</a>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="thin">
+                                <a href="../projects_info.html">Info</a>
+                            </span>
+                            <span class="thin">
+                                <a href="../projects_schedule.html">Schedule</a>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </span>
+        </nav>
+
+
+        <div class="container">
+            <h1>Todo-List 2.0 Lab</h1>
+            <br>
+            <h2>Let's build a Todo-List with Google Cloud Firestore!</h2>
+            <p>
+                Goals:
+                <ol>
+                    <li>Setting Up Google Cloud Credits</li>
+                    <li>Understanding the Firestore Document Structure</li>
+                    <li>Saving and Loading Items from a Firestore Database</li>
+                </ol>
+                <img src="todo-example.png" style="width:100%;">
+            </p>
+
+
+
+<br>
+<br>
+<br>
+            <h2>Step 0: Understanding Cloud Firestore</h2>
+            <div class="notes-container">
+                <h3>What is a database and why do we need one?</h3>
+                <p>
+                    Right now, we have a todo-list app that works -- we can add
+                    items and we can even remove them! However, if you ever have
+                    to close your browser or reload the page, you'll lose
+                    everything on your list! Databases can fix that!
+                </p>
+                <p>
+                    The topic we're discussing is called "Persistent State."
+                    Basically, data can either be persistent or not. Right now,
+                    our data is NOT persistent because it does not live on after
+                    our page reloads. We want to make our data persistent and to
+                    do so, we need to store it in a database which will save
+                    your data between sessions.
+                </p>
+                <p>
+                    So what is a database? Well the name kind of speaks for
+                    itself: A database is a structured set of data held in a
+                    computer <i>OR</i> a place to store data!
+                </p>
+
+                <br>
+                <h3>How is data stored and stuctured in Cloud Firestore?</h3>
+                <p>
+                    So how do these things work? Right now, we know that
+                    variables store information -- is that the same thing? Nope.
+                </p>
+                <p>
+                    Databases store data in a structured way. For Firestore,
+                    the data is structured into <i>Collections</i> and
+                    <i>Documents.</i>
+                </p>
+                <p>
+                    A document is a single unit of storage. So
+                    if you wanted to store information about a user -- like
+                    a username, a First and Last name, and a password -- you'd
+                    store all of that info in a single document.
+                </p>
+                <p>
+                    A collection is just a list of documents. So we could have
+                    a collection called "Users" inside of which we store all our
+                    documents that have specific data for each user.
+                </p>
+
+                <br>
+                <h3>So how will we structure our data?</h3>
+                <p>
+                    For our app, we have Notes and our notes have text associated
+                    with them. As such, we'll have a collection called "Notes."
+                    Inside of that, we'll create a single document for every
+                    sticky-note where we'll save the text associated with the
+                    sticky-note.
+                </p>
+
+                <br>
+                <h3>How do you SAVE data to a Cloud Firestore Database?</h3>
+                <p>
+                    Let's use our "User" example for this. So we want to add a
+                    user -- here's the Javascript code that would do it.
+                </p>
+                <pre><code class="language-js">db.collection("users").add({
+    username: "arman22",
+    firstname: "Arman",
+    lastname: "Hezarkhani",
+    password: "armanrocks",
+})
+.then(function(docRef) {
+    console.log("You created a document! Here's its unique ID: ", docRef.id);
+})</code></pre>
+
+                <p>
+                    That's it! What just happened?<br>
+                    On the first line, we're declaring that we want to create
+                    a new document inside of the "users" collection.<br>
+                    On lines 2-5, we're declaring the values that should be
+                    saved inside of this new document. <br>
+                    On line 7, we have a <code class="language-js">.then()</code>
+                    statement. What's that? Let's take a step back.
+                </p>
+                <p>
+                    Lines 1-6 are saving data to our Firestore database. To do
+                    that, we're literally sending that data over the internet to
+                    our database, then our database has to go through the
+                    trouble of saving it, all of which takes time. As such,
+                    we have a <code class="language-js">.then()</code> statement
+                    to say the following: <i>First, I want to store this data
+                    to our database. THEN, once it's done, I want to run this
+                    function.</i>
+                </p>
+                <p>
+                    So what's line 7 doing? It's telling our code what to do
+                    after the database is done saving our data!
+                    On line 8, we're simply printing out what the database
+                    returned to us, which is an ID for this document.<br>
+                    Hint, Hint: It's a unique ID, JUST for this document.
+                    We'll be using that later on!
+                </p>
+                <br>
+                <h3>How do you READ data from a Cloud Firestore Database?</h3>
+                <p>
+                    Imagine we've saved a bunch of users. Now, we want to get
+                    every user and simply log the first and last names to the
+                    console.
+                </p>
+                <pre><code class="language-js">db.collection("users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log("First Name: " + doc.data().firstname);
+        console.log("Last Name: " + doc.data().lastname);
+    });
+});</code></pre>
+            <p>
+                This is also a bunch of new stuff -- so what's going on?<br>
+                On line 1, we're saying: <i>Hey Database, in that collection
+                called "users," get me every value and save that data inside of
+                'querySnapshot.'</i>You don't have to know exactly what
+                'querySnapshot' is or means -- just know that it has the values
+                that we asked our database for.<br>
+                On line 2, we're basically saying: <i>Thanks for
+                sending me every doc I asked for. Now, for each document
+                that you sent me in querySnapshot, I'm going to do some stuff.</i><br>
+                Lines 3 and 4 are just logging specific information from each
+                document.
+            </p>
+            </div>
+
+
+
+
+<br>
+<br>
+<br>
+            <h2>Step 1: Getting Started with Firestore</h2>
+            <div class="notes-container">
+                <h3>1) Get your free credits</h3>
+                <p>
+                    I emailed you with a free cloud credit. Click on
+                    "Student Coupon Retrieval Link" and fill out the form. It'll
+                    then ask you to verify your email. Once you do, you'll
+                    receive another email with a Coupon, looking something like
+                    "XXXX-XXXX-XXXX-XXXX." That coupon holds $50 of free Google
+                    Cloud Credit.
+                </p>
+
+                <br>
+                <h3>2) Redeem the Credits</h3>
+                <p>
+                    <ol>
+                        <li>Go to <a href="https://console.cloud.google.com/edu">console.cloud.google.com/edu</a>.</li>
+                        <li>MAKE SURE YOU'RE LOGGED IN TO YOUR @GMAIL.COM ADDRESS -- NOT YOUR @ANDREW.CMU.EDU ADDRESS</li>
+                        <li>Input the code</li>
+                        <li>Press "Accept and Continue."</li>
+                    </ol>
+                </p>
+
+                <h3>3) Open your Firestore Project</h3>
+                <p>
+                    <ol>
+                        <li>Go to <a href="https://console.firebase.google.com/">console.firebase.google.com</a>.</li>
+                        <li>Click on "Create a Project"</li>
+                        <li>Under "Project Name," Click on the dropdown and select the project that was created for you.</li>
+                        <li>Select all checkboxes and click "Add Firebase."</li>
+                    </ol>
+                </p>
+
+
+                <h3>4) "Add Firestore to your Webapp"</h3>
+                <p>
+                    Now that you've done this, you should be on the Firebase
+                    "Getting Started" homepage. On there, you should see four
+                    icons -- click on the third one, which looks like HTML code,
+                    indicating a "Web" project.<br>
+                    This'll open up a new page to "Add Firestore to your Webapp."
+                    Under Register App, put "todo_list" for the app nickname and
+                    click "Register App."<br>
+                    Now, you'll see something like this: <pre><code class="language-js">  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);</code></pre>
+                    Copy that somewhere (in an empty file somewhere), as we'll
+                    need it in a moment.<br>
+                    Click "Continue to Console."
+                </p>
+
+
+
+                <h3>5) Create a Database</h3>
+                <p>
+                    <ol>
+                        <li>On the left navbar, click on "Database."</li>
+                        <li>Click "Create Database"</li>
+                        <li>In the pop-up, choose "Start in test mode" and click "Next"</li>
+                        <li>Leave the default location and click "Done"</li>
+                    </ol>
+                </p>
+
+                <br>
+                <br>
+                <p>
+                    AAAAAAAND that's all the set-up you need to do!!! Let's recap:
+                    <ul>
+                        <li>First, you got your free Google Cloud credits</li>
+                        <li>Then, you input the credit into the cloud console
+                        and redeemed $50</li>
+                        <li>After that, you opened a project in Firebase and initialized an "App"</li>
+                        <li>Lastly, you initialized a database</li>
+                    </ul>
+                    Wooooo -- now let's code!!!
+                </p>
+            </div>
+
+
+
+
+<br>
+<br>
+<br>
+            <h2>Step 2: Save Items to the Database</h2>
+            <div class="notes-container">
+                <p>
+                    Now that we have our database set up, let's code!<br>
+                    Start by downloading the starter-code here <a href="TODO_2_starter.zip">here</a><br>
+                    Right now, the javascript simply runs some code when a form is submitted.<br>
+                    Let's add to that!
+                </p>
+
+                <p>
+                    First, we'll need to add some configuration code -- this is
+                    basically code that's required by Firestore in order for
+                    the code to work.<br>
+                    At the top of the <code>index.js</code>, add the following
+                    code:<pre><code class="language-js">firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
+};
+
+firebase.initializeApp(firebaseConfig);
+
+var db = firebase.firestore();</code></pre>
+                    Look familiar? Good! Make sure that <code class="language-js">firebaseConfig</code>
+                    has the values that you copied from earlier.
+                </p>
+                <p>
+                    Now that we have the configuration, let's outline what we'll
+                    be doing in this code, every time our user submits a new
+                    Todo item:
+                    <ol>
+                        <li>Get the user input</li>
+                        <li>Save that input to the database</li>
+                        <li>Add the sticky-note to the page</li>
+                    </ol>
+                </p>
+                <p>
+                    In the previous lab, we did steps 1 and 3. Now, though, we'll
+                    be saving to the database before we add a sticky-note
+                    to the page.<br>
+                    Add some code to read the user's input and pass it to a
+                    function called <code class="language-js">saveItemToDatabase</code>.<br>
+                    That should look something like this:<pre><code class="language-js">$("#form1").submit(function(e) {
+  e.preventDefault();
+
+  var todo_input = document.getElementById("todo-input");
+  var todo_text = todo_input.value;
+
+  saveItemToDatabase(todo_text);
+
+  todo_input.value = "";
+});
+
+function saveItemToDatabase(todo_text){
+  // Your Code Here!
+}</code></pre>
+                    So now, every time a user types a todo item, we pass the user's
+                    input -- the todo_text -- to a function. In that function,
+                    we want to save the todo_text to our firestore database.<br>
+                    Try it on your own!<br><br>
+                    Your code should now look something like this:<pre><code class="language-js">function saveItemToDatabase(todo_text){
+  // Save element to database
+  doc = db.collection("notes").add({
+    noteText: todo_text
+  })
+}</code></pre>
+                    So...what is this code doing? It's creating a Firestore Document
+                    with one element -- <code class="language-js">noteText</code> -- and it's adding that
+                    Document to the Collection called <code class="language-js">"notes"</code>.<br>
+                    Wanna see if it worked? Check back in the Firestore console to see for yourself!
+                </p>
+                <p>
+                    Okay, now we're saving elements to our database, so we're
+                    done with steps 1 and 2. Step 3 is to add our element to
+                    a page -- lets add a <code class="language-js">.then()</code>
+                    statement to do that now!<br>
+                    After doing so, your code should look something like this:<pre><code class="language-js">function saveItemToDatabase(todo_text){
+  // Save element to database
+  doc = db.collection("notes").add({
+    noteText: todo_text
+  })
+  .then(function(docRef){
+    docRef.get().then(function(doc) {
+      addNewItem(doc);
+    });
+  });
+}
+
+function addNewItem(doc){
+  // Create new todo div to store all todo content
+  var todo_card = document.createElement("div");
+  todo_card.classList.add("todo_card");
+
+  // Put the todo item in a p
+  var todo_text_elem = document.createElement("p");
+  todo_text_elem.innerHTML = doc.data().noteText;
+
+  // Construct the entire element
+  todo_card.appendChild(todo_text_elem)
+
+  // Add it to the DOM
+  document.getElementById("container").appendChild(todo_card);
+}</code></pre>
+                    Now, every time a user submits a todo item, we're saving the
+                    text to the database. When that save is complete, we're passing
+                    the document object that the database returns to our
+                    <code class="language-js">addNewItem</code> function to add
+                    the text to the page.
+                </p>
+                <p>
+                    Now, let's write some code to delete the sticky-notes!<br>
+                    First, we'll need to give the sticky-notes a unique ID.
+                    Luckily, Firebase automatically generates a unique ID for
+                    every document you create, and it's stored inside of
+                    <code class="language-js">doc.id</code>. <br>
+                    So, the following code should allow us to give our sticky note
+                    a unique ID:<pre><code class="language-js">var todo_card_id = doc.id
+todo_card.id = todo_card_id</code></pre>
+                    Lastly, we can add the following code to remove the element
+                    from the page AND delete it from the database:<pre><code class="language-js">// Add a click listener to the todo card
+todo_card.addEventListener("click", function(){
+  // Remove Element from the DOM
+  document.getElementById(todo_card_id).remove()
+  // Delete from Database
+  db.collection("notes").doc(doc.id).delete();
+});</code></pre>
+                </p>
+                <p>
+                    Yay!!! Now, we can delete items, too!<br>
+                    There's an issue, though... Try refreshing the page :(<br>
+                    This is happening because we're not loading elements from
+                    the database when we first load the page.
+
+                    If you add the following code to the bottom of the javascript document,
+                    that'll work, too:<pre><code class="language-js">function loadNotes(){
+  db.collection("notes").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        addNewItem(doc);
+    });
+  });
+};
+
+$(document).ready(function(){
+  loadNotes()
+});</code></pre>
+                </p>
+            </div>
+
+
+
+            <h1> aaaaand that's it :)</h1>
+
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+    </body>
+</html>
