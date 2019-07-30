@@ -27,8 +27,7 @@ function areParallel(x1, y1, x2, y2, x3, y3, x4, y4){
 }
 
 /*
- * For this problem, we'll assume that gradebooks are stored in
- * .txt files. Each row of the gradebook file contains a student's
+ * Each row of the gradebook string contains a student's
  * name (one word, all lowercase), followed by one or more
  * comma-separated integer grades. A gradebook always contains at
  * least one student, and each row always contains at least one
@@ -36,7 +35,7 @@ function areParallel(x1, y1, x2, y2, x3, y3, x4, y4){
  * with the "#" character, which should be ignored.
  *
  * With this in mind, write the function
- * gradebookSummary(gradebookFilename) that takes the gradebook
+ * gradebookSummary(gradebook) that takes the gradebook
  * as a string as an argument and returns a summary of the
  * gradebook as a string. This summary string should show each
  * student followed by a tab followed by their average grade
@@ -51,7 +50,7 @@ function areParallel(x1, y1, x2, y2, x3, y3, x4, y4){
  * on each gradebook line from the scores... one approach
  * would be to look for the first comma after a newline.
 */
-function gradebookSummary(gradebookFilename){
+function gradebookSummary(gradebook){
   return 42;
 }
 
@@ -136,7 +135,7 @@ function testIsSorted(a){
   var list1 = [1, 2, 3]
   var list2 = [1, 3, 2]
   var list3 = [1]
-  assert(average(list1) === true)
-  assert(average(list2) === false)
-  assert(average(list3) === true)
+  assert(isSorted(list1) === true)
+  assert(isSorted(list2) === false)
+  assert(isSorted(list3) === true)
 }
