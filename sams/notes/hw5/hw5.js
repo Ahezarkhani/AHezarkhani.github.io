@@ -131,7 +131,7 @@ betty,88`
   assert(gradebookSummary(gradebook) === expectedResult)
 }
 
-function testIsSorted(a){
+function testIsSorted(){
   var list1 = [1, 2, 3]
   var list2 = [1, 3, 2]
   var list3 = [1]
